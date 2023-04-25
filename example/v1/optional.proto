@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package example.v1;
+
+message OptionalMsg {
+  optional int64 opt_int = 1;
+  optional Wat4 opt_enum = 2;
+  optional Thing4 opt_thing = 3;
+}
+
+enum Wat4 {
+  WAT4_UNSPECIFIED = 0;
+  WAT4_WAT = 1;
+}
+
+message Thing4 {
+  int64 wat = 2;
+}

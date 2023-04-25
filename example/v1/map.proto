@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package example.v1;
+
+import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+message Map {
+  map<string, string> str_by_str = 1;
+  map<int64, string> str_by_int = 2;
+  map<string, Wat2> enum_by_str = 3;
+  map<string, Thing2> msg_by_str = 4;
+
+  map<string, google.protobuf.Timestamp> timestamp_by_str = 5;
+  map<string, google.protobuf.Int64Value> wrapped_int_by_str = 6;
+  map<string, google.protobuf.Struct> struct_by_str = 7;
+  map<string, google.protobuf.Any> any_by_str = 8;
+}
+
+enum Wat2 {
+  WAT2_UNSPECIFIED = 0;
+  WAT2_WAT = 1;
+}
+
+message Thing2 {
+  int64 wat = 2;
+}

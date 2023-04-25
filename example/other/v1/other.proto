@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package example.other.v1;
+
+message Other {
+  int64 wat = 1;
+}
+
+enum OtherEnum {
+  OTHER_ENUM_NA = 0;
+  OTHER_ENUM_WAT = 1;
+}
