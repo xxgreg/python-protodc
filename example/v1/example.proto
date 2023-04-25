@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package example.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message Example {
+  int64 life_the_universe_and_everything = 1;
+  repeated Example examples = 2;
+  oneof wat {
+    string javascript = 3;
+    string golang = 4;
+    Example another_example = 5;
+  }
+  google.protobuf.Timestamp time = 6;
+}

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package example.v1;
+
+import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+message Oneof {
+
+  oneof one_stuff {
+    int64 int_stuff = 1;
+  }
+
+  oneof all_stuff {
+    int64 more_int = 2;
+    int64 and_more_int = 3;
+    Wat5 wat = 4;
+    Thing5 thing = 5;
+
+    //TODO google.protobuf.NullValue the_null = 6;
+    google.protobuf.Timestamp the_timestamp = 7;
+    google.protobuf.BoolValue the_wrapper = 8;
+    google.protobuf.Struct the_struct = 9;
+    google.protobuf.Any the_any = 10;
+  }
+
+}
+
+enum Wat5 {
+  WAT5_UNSPECIFIED = 0;
+  WAT5_WAT = 1;
+}
+
+message Thing5 {
+  int64 wat = 2;
+}

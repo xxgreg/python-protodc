@@ -1,0 +1,13 @@
+version: v1
+managed:
+  enabled: true
+  #FIXME This value isn't actually used but is the go protobuf compiler toolchain checks for it's presence.
+  go_package_prefix:
+    default: gen
+plugins:
+  - plugin: protoc-gen-python-protodc
+    out: .
+    path: ["go", "run", "./protoc-gen-python-protodc"]
+  - plugin: buf.build/protocolbuffers/python
+    out: .
+    opt: pyi_out=.

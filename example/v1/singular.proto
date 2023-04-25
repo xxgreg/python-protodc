@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package example.v1;
+
+import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+message Singular {
+  string the_str = 1;
+  int64 the_int = 2;
+  double the_double = 3;
+  Wat3 the_enum = 4;
+  Thing3 the_msg = 5;
+
+  google.protobuf.NullValue the_null = 6;
+  google.protobuf.Timestamp the_timestamp = 7;
+  google.protobuf.BoolValue the_wrapper = 8;
+  google.protobuf.Struct the_struct = 9;
+  google.protobuf.Any the_any = 10;
+}
+
+enum Wat3 {
+  WAT3_UNSPECIFIED = 0;
+  WAT3_WAT = 1;
+}
+
+message Thing3 {
+  int64 wat = 2;
+}
